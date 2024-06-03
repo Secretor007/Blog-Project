@@ -1,0 +1,42 @@
+{% include "header.html" %}
+
+<!-- Page Header -->
+<header
+  class="masthead"
+  style="background-image: url({{ url_for('static', filename='img/about-bg.jpg')}})"
+>
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="page-heading">
+          <h1>About Me</h1>
+          <span class="subheading">This is what I do.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <p>
+        <h2>Hello! I'm Pratham Kadave</h2>
+        I'm a dedicated computer engineer with a passion for coding and web
+        development. From crafting clean and efficient code to designing
+        responsive and user-friendly websites, I thrive on the challenges and
+        creativity involved in the tech world. My journey with computers started
+        early, and over the years, this fascination has only grown stronger.
+        Whether it's solving complex problems or exploring the latest
+        technological advancements, I'm always eager to dive in and learn more.
+        Welcome to my world of coding and innovation!
+      </p>
+    </div>
+  </div>
+</div>
+
+<hr />
+
+{% include "footer.html" %}
