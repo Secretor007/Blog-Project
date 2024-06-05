@@ -10,6 +10,7 @@ from sqlalchemy.orm import relationship
 from flask_login import UserMixin, login_user, LoginManager, login_required, current_user, logout_user
 from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
 from flask_gravatar import Gravatar
+import os
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
@@ -78,6 +79,10 @@ class Comment(db.Model):
     post_id = db.Column(db.Integer, db.ForeignKey("blog_posts.id"))
     comment_author = relationship("User", back_populates="comments")
     parent_post = relationship("BlogPost", back_populates="comments")
+
+with app.app_context():
+    if not os.path.exists('blog.db'):
+        db.create_all()
 
 @app.route('/')
 def get_all_posts():
